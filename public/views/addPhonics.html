@@ -1,0 +1,45 @@
+<div class="row">
+    <form class="col s12" ng-submit="addPhonics()">
+        <div class="card ">
+            <div class="card-content">
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <select id="categoryList"  ng-model="phonicCtrl.phonics.category">
+                            <option value="" disabled selected>Choose your option</option>
+                            <option ng-repeat="category in phonicCtrl.categoriesList" value="{{category._id}}">{{category.categoryName}}</option>
+                        </select>
+                        <label for="categoryList">Category</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input  id="code" type="text" class="validate" ng-model="phonicCtrl.phonics.code" >
+                        <label for="code">Phonems</label>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="input-field col s6">
+                        <input  id="combination" type="text" class="validate" ng-model="phonicCtrl.combination" >
+                        <label for="combination">Combination</label>
+                    </div>
+                    <div class="input-field col s6">
+                        <a class="waves-effect waves-light btn" ng-click="phonicCtrl.addCombination(phonicCtrl.combination)">Add Combination</a>
+                    </div>
+                </div>
+                <div class="row" ng-repeat="combination in phonicCtrl.phonics.combinations">
+                    <div class="input-field col s6">
+                        <p>{{combination.combination}}</p>
+                        </div>
+                    <div class="input-field col s6">
+                        <a class="waves-effect waves-light btn" ng-click="phonicCtrl.removeCombination(combination.combination)">Delete</a>
+                    </div>
+
+                </div>
+
+                <input class="waves-effect waves-light btn" type="submit" value="Add Phonic">
+            </div>
+        </div>
+    </form>
+
+</div>

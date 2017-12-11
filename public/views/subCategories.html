@@ -1,0 +1,36 @@
+<div class="row">
+    <form class="col s12" ng-submit="subCategoriesData()">
+        <div class="card ">
+            <div class="card-content">
+
+                <div class="row">
+                <div class="input-field col s12">
+                    <select id="categoryList"  ng-model="subCategoriesCtrl.subCategory.parent">
+                        <option value="" disabled selected>Choose your option</option>
+                        <option ng-repeat="category in subCategoriesCtrl.categoriesList" value="{{category._id}}">{{category.categoryName}}</option>
+                    </select>
+                    <label for="categoryList">Parent</label>
+                </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <input  id="subcategory" type="text" class="validate" ng-model="subCategoriesCtrl.subCategory.name">
+                        <label for="subcategory">Sub Category</label>
+                    </div>
+                </div>
+
+                <div class="row">
+                    <div class="input-field col s12">
+                        <textarea id="subDescription" class="materialize-textarea" ng-model="subCategoriesCtrl.categories.description"></textarea>
+                        <label for="subDescription">Description</label>
+                    </div>
+                </div>
+
+
+                <input class="waves-effect waves-light btn" type="submit" value="Add Category">
+            </div>
+        </div>
+    </form>
+
+</div>
